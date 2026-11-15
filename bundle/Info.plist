@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDevelopmentRegion</key><string>en</string>
+    <key>CFBundleDisplayName</key><string>Parquet Viewer</string>
+    <key>CFBundleExecutable</key><string>parquet-viewer</string>
+    <key>CFBundleIconFile</key><string>parquet-viewer</string>
+    <key>CFBundleIdentifier</key><string>com.aruntaxak.parquet-viewer</string>
+    <key>CFBundleInfoDictionaryVersion</key><string>6.0</string>
+    <key>CFBundleName</key><string>Parquet Viewer</string>
+    <key>CFBundlePackageType</key><string>APPL</string>
+    <key>CFBundleShortVersionString</key><string>0.1.0</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>LSMinimumSystemVersion</key><string>10.13</string>
+    <key>NSHighResolutionCapable</key><true/>
+    <!-- NOTE: the .parquet association (CFBundleDocumentTypes) lives on the
+         Parquet Opener helper droplet (Contents/Helpers), which forwards files
+         via argv. The UTI export stays here so the type resolves system-wide. -->
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeIdentifier</key><string>org.apache.parquet</string>
+            <key>UTTypeDescription</key><string>Parquet File</string>
+            <key>UTTypeIconFile</key><string>parquet-doc</string>
+            <key>UTTypeConformsTo</key>
+            <array>
+                <string>public.data</string>
+                <string>public.content</string>
+            </array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array>
+                    <string>parquet</string>
+                </array>
+                <key>public.mime-type</key>
+                <string>application/vnd.apache.parquet</string>
+            </dict>
+        </dict>
+    </array>
+</dict>
+</plist>

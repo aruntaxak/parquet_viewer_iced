@@ -1,0 +1,23 @@
+[package]
+name = "parquet-viewer"
+version = "0.1.0"
+edition = "2024"
+description = "Parquet Viewer - native iced"
+
+[dependencies]
+iced = { version = "0.14", features = ["smol"] }
+parquet = { version = "53", features = ["arrow"] }
+arrow = { version = "53" }
+rfd = "0.16"
+chrono = "0.4"
+regex = "1.10"
+dirs = "5.0"
+url = "2.5"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = "0.5.2"
+objc2-app-kit = { version = "0.2", features = ["NSResponder", "NSApplication", "NSMenu", "NSMenuItem"] }
+objc2-foundation = { version = "0.2", features = ["NSString"] }
+block2 = "0.5"
